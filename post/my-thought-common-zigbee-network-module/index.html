@@ -7,12 +7,12 @@
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://wemakerspace.github.io/favicon.ico?v=1628568051464">
+<link rel="shortcut icon" href="https://wemaker.space/favicon.ico?v=1628568304924">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://wemakerspace.github.io/styles/main.css">
+<link rel="stylesheet" href="https://wemaker.space/styles/main.css">
 
 
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -26,7 +26,7 @@
   
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
-    <h3><a href="https://wemakerspace.github.io">Tech with Jin - JIN 科技</a></h3>
+    <h3><a href="https://wemaker.space">Tech with Jin - JIN 科技</a></h3>
   </div>
   <div class="collapsible">
     <input id="collapsible1" type="checkbox" name="collapsible1">
@@ -85,31 +85,31 @@
             <p class="article-meta">
               2021-08-10
               
-                <a href="https://wemakerspace.github.io/tag/rg71NSG6c/" class="badge warning">
+                <a href="https://wemaker.space/tag/rg71NSG6c/" class="badge warning">
                   zigbee
                 </a>
               
-                <a href="https://wemakerspace.github.io/tag/NLcgDgapva/" class="badge ">
+                <a href="https://wemaker.space/tag/NLcgDgapva/" class="badge success">
                   sonoff
                 </a>
               
-                <a href="https://wemakerspace.github.io/tag/32U3TyZFl0/" class="badge secondary">
+                <a href="https://wemaker.space/tag/32U3TyZFl0/" class="badge secondary">
                   aqara
                 </a>
               
-                <a href="https://wemakerspace.github.io/tag/NpCmyYE9av/" class="badge secondary">
+                <a href="https://wemaker.space/tag/NpCmyYE9av/" class="badge secondary">
                   tuya
                 </a>
               
             </p>
             
-              <img src="https://wemakerspace.github.io/post-images/my-thought-common-zigbee-network-module.jpg" alt="My Thought - Common Zigbee Network Module">
+              <img src="https://wemaker.space/post-images/my-thought-common-zigbee-network-module.jpg" alt="My Thought - Common Zigbee Network Module">
             
             <div class="post-content">
               <p>There so many Zigbee device out there in the market. Which one of them is better? What technology stack they use? Here is my research on the common Zigbee module that you can from the market. 🤗</p>
 <!-- more -->
 <h1 id="sonoff-zigbee-product">Sonoff Zigbee Product</h1>
-<figure data-type="image" tabindex="1"><img src="https://wemakerspace.github.io/post-images/1628560677261.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://wemaker.space/post-images/1628560677261.jpg" alt="" loading="lazy"></figure>
 <h2 id="chipset-design">Chipset design:</h2>
 <p>Sonoff Zigbee module (all the 4 type out there except the bridge) using the super old 2009 TI-2530 chip.</p>
 <p>CC2530 CPU is 8051 8 bit, 8KB flash. With -97dBm sensitivity and max 4.5dBm output.</p>
@@ -125,7 +125,7 @@ even at low power mode, CC2530 is around 400nA.</p>
 <p><strong>Pro:</strong> Cheap. Locally available.<br>
 <strong>Con:</strong> using older 8 bit chipset, limited function, battery life around 0.5-1 year.</p>
 <h1 id="aqara-zigbee-product-lumi">Aqara Zigbee Product (Lumi)</h1>
-<figure data-type="image" tabindex="2"><img src="https://wemakerspace.github.io/post-images/1628560794731.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://wemaker.space/post-images/1628560794731.jpg" alt="" loading="lazy"></figure>
 <h2 id="chipset-design-2">Chipset design:</h2>
 <p>Aqara sensor use NXP JN5169 chip. They also been doing this longer time using NXP chip since their first product (Lumi in China)</p>
 <p>NXP JN5169 is a 32 bit RISC chip, 32KB ram and 512KB Flash with max 10dBm output.<br>
@@ -144,7 +144,7 @@ Looking at the power saving feature, Zigbee RX power consumption is 13mA. TX pow
 <p><strong>Pro:</strong> Long range, long battery life (2 year), more stable<br>
 <strong>Con:</strong> Slightly expensive. earlier NXP firmware don't play well with CC2530 based router. Now better d.</p>
 <h1 id="tuya-zigbee-product">Tuya Zigbee Product</h1>
-<figure data-type="image" tabindex="3"><img src="https://wemakerspace.github.io/post-images/1628561306940.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://wemaker.space/post-images/1628561306940.jpg" alt="" loading="lazy"></figure>
 <h2 id="chipset-design-3">Chipset design:</h2>
 <p>They have quite a number of module using different MCU.</p>
 <p>I had see the latest one using silabs EFR32 ARM-M33 one, that one quite powerful MCU but the firmware is the same limited feature with their lower end module. I already reserved that to hack my own EMBERNET Z-stack on it rather than the Tuya OS.</p>
@@ -171,7 +171,7 @@ Looking at the power saving feature, Zigbee RX power consumption is 13mA. TX pow
 
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
-    <img src="https://wemakerspace.github.io/images/avatar.png?v=1628568051464" class="no-responsive avatar">
+    <img src="https://wemaker.space/images/avatar.png?v=1628568304924" class="no-responsive avatar">
     <div class="text-muted">温故而知新</div>
     <div class="social-container">
       
@@ -196,7 +196,7 @@ Looking at the power saving feature, Zigbee RX power consumption is 13mA. TX pow
         
           
             <li>
-              <a href="https://wemakerspace.github.io/post/my-thought-common-zigbee-network-module/">My Thought - Common Zigbee Network Module</a>
+              <a href="https://wemaker.space/post/my-thought-common-zigbee-network-module/">My Thought - Common Zigbee Network Module</a>
             </li>
           
         
@@ -209,26 +209,26 @@ Looking at the power saving feature, Zigbee RX power consumption is 13mA. TX pow
     </div>
     <div class="row">
       
-        <a href="https://wemakerspace.github.io/tag/rg71NSG6c/" class="badge success">
+        <a href="https://wemaker.space/tag/rg71NSG6c/" class="badge ">
           zigbee
         </a>
       
-        <a href="https://wemakerspace.github.io/tag/NLcgDgapva/" class="badge warning">
+        <a href="https://wemaker.space/tag/NLcgDgapva/" class="badge secondary">
           sonoff
         </a>
       
-        <a href="https://wemakerspace.github.io/tag/32U3TyZFl0/" class="badge secondary">
+        <a href="https://wemaker.space/tag/32U3TyZFl0/" class="badge ">
           aqara
         </a>
       
-        <a href="https://wemakerspace.github.io/tag/NpCmyYE9av/" class="badge success">
+        <a href="https://wemaker.space/tag/NpCmyYE9av/" class="badge ">
           tuya
         </a>
       
     </div>
   </div>
   <div class="paper">
-    Check out Youtube <a href="https://www.youtube.com/c/tzejinshee" target="_blank">Jin科技</a> | <a class="rss" href="https://wemakerspace.github.io/atom.xml" target="_blank">RSS</a>
+    Check out Youtube <a href="https://www.youtube.com/c/tzejinshee" target="_blank">Jin科技</a> | <a class="rss" href="https://wemaker.space/atom.xml" target="_blank">RSS</a>
   </div>
 </div>
 
