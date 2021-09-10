@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wemaker.space</id>
     <title>Tech with Jin - JIN 科技</title>
-    <updated>2021-08-10T04:06:55.812Z</updated>
+    <updated>2021-09-10T02:30:20.996Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wemaker.space"/>
     <link rel="self" href="https://wemaker.space/atom.xml"/>
@@ -10,6 +10,87 @@
     <logo>https://wemaker.space/images/avatar.png</logo>
     <icon>https://wemaker.space/favicon.ico</icon>
     <rights>All rights reserved 2021, Tech with Jin - JIN 科技</rights>
+    <entry>
+        <title type="html"><![CDATA[HAMY - Zigbee CC2652P Adapter]]></title>
+        <id>https://wemaker.space/post/hamy-zigbee-cc2652p-adapter/</id>
+        <link href="https://wemaker.space/post/hamy-zigbee-cc2652p-adapter/">
+        </link>
+        <updated>2021-09-09T16:05:29.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="features">Features:</h1>
+<ul>
+<li>TI CC2652P SimpleLink™ 2.4 GHz Multiprotocol Wireless MCU targeting Zigbee,Bluetooth 5.1 Low Energy,Thread + 19.5-dBm high-power amplifier</li>
+<li>2 LED for indication</li>
+<li>Compatible with Zigbee2MQTT</li>
+<li>SMA antenna port for an external antenna (come with 3dBi ducktail Antenna)</li>
+<li>Hold FLASH button and plug in to enter flashing mode.</li>
+<li>Communicates via the common CH340C USB-UART Bridge</li>
+<li>Plug &amp; Play, comes pre-flashed</li>
+<li>Firmware default TX Power is 20dBm, you can set it lower in zigbee2mqtt.</li>
+</ul>
+<h1 id="firmware">Firmware:</h1>
+<p>The Zigbee Adapter is compatible and tested with <a href="https://www.zigbee2mqtt.io/">Z2M</a>. You can use it with <a href="https://www.home-assistant.io/integrations/zha/">ZHA</a> but you are on your own.</p>
+<p>Device come flash with Egony latest <a href="https://github.com/egony/cc2652p_E72-2G4M20S1E/raw/master/firmware/coordinator/CC2652P_E72_20210901.zip">firmware</a><br>
+You can also flash with Z2M Koenkk <a href="https://github.com/Koenkk/Z-Stack-firmware/raw/master/coordinator/Z-Stack_3.x.0/bin/CC1352P2_CC2652P_other_coordinator_20210708.zip">firmware</a></p>
+<p>If you intend to flash it to use as router, please use this <a href="https://github.com/egony/cc2652p_E72-2G4M20S1E/raw/master/firmware/router/router_CC2652P_E72_20210812.zip">router firmware</a></p>
+<h1 id="how-to-use">How to Use</h1>
+<h2 id="haossupervised">HAOS/Supervised</h2>
+<p>Plug in the USB to the HAOS server (Don't use USB3.0 Port if possible)</p>
+<p><code>Supervisor -&gt; System -&gt; Host -&gt; 3 Dot -&gt; Hardware</code></p>
+<p>Check if <code>ttyUSB0</code> is appeared in there and have the attributes</p>
+<h2 id="vmdocker-on-windows">VM/Docker on Windows</h2>
+<p>Download the WCH CH340 <a href="http://www.wch-ic.com/downloads/file/65.html">Driver</a><br>
+Install the driver.</p>
+<p>Plug in the USB to the computer (Don't use USB3.0 Port if possible)<br>
+Make sure you enable USB passthrough in the VM.</p>
+<p><code>Supervisor -&gt; System -&gt; Host -&gt; 3 Dot -&gt; Hardware</code></p>
+<p>Check if <code>ttyUSB0</code> is appeared in there and have the attributes.</p>
+<p>#Zigbee2MQTT Installation</p>
+<p><code>Supervisor -&gt; Add-on Store -&gt; 3 Dot -&gt; Repositories -&gt; Add</code></p>
+<p>Please add <code>https://github.com/zigbee2mqtt/hassio-zigbee2mqtt</code></p>
+<p>The Zigbee2MQTT addon will be appear in Add-on Store.</p>
+<p>Press Install to install the Z2M addon.</p>
+<p>Once installation is complete, don't start the Add-on yet.</p>
+<p>Go to <code>Configuration</code> tab in <code>Zigbee2MQTT</code> Addon page.</p>
+<p>Find the entry say:</p>
+<pre><code>serial:
+  port: /dev/ttyACM0
+</code></pre>
+<p>Change it to this:</p>
+<pre><code>serial:
+  port: /dev/ttyUSB0
+</code></pre>
+<p>Once done, you can start the Addon.</p>
+<p>If the log indicate the Z2M run successfully, you can click <code>Open Web UI</code> to open the Z2M Management page.</p>
+<p>Under <code>Settings -&gt; About</code>, you should see your HAMY Zigbee Adapter detail:<br>
+<img src="https://wemaker.space/post-images/1631239721530.png" alt="" loading="lazy"></p>
+<p>You can now press <code>Permit Join (All)</code> button at the top right to start adding all your Zigbee device 😜</p>
+<p>More info can be found <a href="https://www.zigbee2mqtt.io/getting_started/running_zigbee2mqtt.html">here</a></p>
+<h1 id="updating-to-latest-firmware">Updating to latest firmware</h1>
+<p>Go TI's website and download the <a href="https://www.ti.com/tool/FLASH-PROGRAMMER">Flash Programmer v2</a></p>
+<p>Press and hold the <code>FLASH</code> button on the HAMY Zigbee Adapter, then plug into your PC USB port. Release the button 2 sec after plug in.</p>
+<p>Make sure your PC have already install the WCH CH340 <a href="http://www.wch-ic.com/downloads/file/65.html">Driver</a></p>
+<p>You should able to see the USB-SERIAL CH340 pop up in your <code>Device Manager</code></p>
+<p>Open TI Flash Programmer v2, you should see the COM port of USB-SERIAL CH340 have been listed at the left.</p>
+<p>Click the <code>UNKNOWN</code> device, and select CC2652P<br>
+<img src="https://wemaker.space/post-images/1631240473814.png" alt="" loading="lazy"></p>
+<p>Browse the firmware you intend to flash .<br>
+<code>Please don't use other firmware as it will disable the USB Bootloader function and you need to JTAG to unbrick it</code></p>
+<p>Please ensure the Actions page is choose same as the picture below.<br>
+<img src="https://wemaker.space/post-images/1631240687853.png" alt="" loading="lazy"></p>
+<p>Press the PLAY button to start flashing.<br>
+<img src="https://wemaker.space/post-images/1631240721247.png" alt="" loading="lazy"></p>
+<p>Remove the HAMY Zigbee Adapter and plug into the HA, you should notice the version change accordingly to the firmware you flash.</p>
+<figure data-type="image" tabindex="1"><img src="https://wemaker.space/post-images/1631240810345.png" alt="" loading="lazy"></figure>
+<p>#Z2M NVMEM Restore Failure</p>
+<h2 id="clearing-the-coordinator-memory">Clearing the coordinator memory</h2>
+<p>During the flashing process, the coordinator's memory (NVMEM) may contain arbitrary data, which may in some cases prevent NVMEM recovery from the zigbee2mqtt backup.</p>
+<p>The coordinator's memory is cleared by the zStackEraseAllNvMem.js script, which is usually located in this directory:</p>
+<p><code>/opt/zigbee2mqtt/scripts</code><br>
+The command line will look something like this:</p>
+<p><code>node zStackEraseAllNvMem.js /dev/ttyUSB0</code><br>
+At the end of the flashing, you may need to unplug-plug the stick into USB to try again.</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[My Thought - Common Zigbee Network Module]]></title>
         <id>https://wemaker.space/post/my-thought-common-zigbee-network-module/</id>
